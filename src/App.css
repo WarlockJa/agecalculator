@@ -51,10 +51,10 @@
   -moz-appearance: textfield;
   cursor: pointer;
   margin: 0;
-  color: black;
   border: 1px solid var(--clr-border-primary);
   width: 100%;
-  background-color: var(--clr-bg-primary);
+  color: var(--clr-font-primary);
+  background-color: transparent;
   border-radius: 6px;
   padding: 0.5em;
   font-size: 1.4rem;
@@ -134,7 +134,7 @@
   align-items: center;
 }
 
-.ageCalculator__result--emptyPlug > div{
+.ageCalculator__result--emptyPlug > div {
   width: 1.5em;
   height: 0.5em;
 
