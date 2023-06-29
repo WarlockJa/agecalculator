@@ -1,0 +1,20 @@
+{
+  "days": "день",
+  "months": "месяц",
+  "years": "год",
+  "placeholder_dd": "ДД",
+  "placeholder_mm": "ММ",
+  "placeholder_yyyy": "ГГГГ",
+  "days_2-4": "дня",
+  "days_5-9": "дней",
+  "months_2-4": "месяца",
+  "months_5-9": "месяцев",
+  "years_2-4": "года",
+  "years_5-9": "лет",
+  "error_year0": "Года 0 не существует",
+  "error_notInPast": "Должно быть в прошлом",
+  "error_fieldRequired": "Поле не заполнено",
+  "error_invalidMonth": "Неправильный месяц",
+  "error_invalidDay": "Неправильный день",
+  "error_invalidDate": "Неправильная дата"
+}

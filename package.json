@@ -12,8 +12,11 @@
   },
   "dependencies": {
     "@types/jest": "^29.5.1",
+    "i18next-browser-languagedetector": "^7.1.0",
+    "i18next-http-backend": "^2.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^13.0.1",
     "ts-jest": "^29.1.0"
   },
   "devDependencies": {

@@ -1,0 +1,20 @@
+{
+  "days": "day",
+  "months": "month",
+  "years": "year",
+  "placeholder_dd": "DD",
+  "placeholder_mm": "MM",
+  "placeholder_yyyyy": "YYYY",
+  "days_2-4": "days",
+  "days_5-9": "days",
+  "months_2-4": "months",
+  "months_5-9": "months",
+  "years_2-4": "years",
+  "years_5-9": "years",
+  "error_year0": "There was no year 0",
+  "error_notInPast": "Must be in the past",
+  "error_fieldRequired": "This field is required",
+  "error_invalidMonth": "Must be a valid month",
+  "error_invalidDay": "Must be a valid day",
+  "error_invalidDate": "Must be a valid date"
+}
