@@ -3,11 +3,12 @@ interface IIsValidDate {
   month: number;
   day: number;
   currentDate: Date;
-  t: (value: string) => string;
+  t?: (value: string) => string;
+  test?: boolean;
 }
 
 const isValidDate = (props: IIsValidDate) => {
-  const { year, month, day, currentDate, t } = props;
+  const { year, month, day, currentDate, t, test } = props;
   // input field error messages
   let invalidDayMessage = "";
   let invalidMonthMessage = "";
@@ -20,32 +21,39 @@ const isValidDate = (props: IIsValidDate) => {
   if (!isNaN(year)) {
     // TIL there was no year zero. It went from 1BC to 1AD
     if (year === 0) {
-      invalidYearMessage = t("error_year0");
+      invalidYearMessage =
+        test || !t ? "There was no year 0" : t("error_year0");
     }
     // specific validation for a year field to be in the past as shown in the task conditions
     if (currentDate.getFullYear() < year) {
-      invalidYearMessage = t("error_notInPast");
+      invalidYearMessage =
+        test || !t ? "Must be in the past" : t("error_notInPast");
     }
   } else {
-    invalidYearMessage = t("error_fieldRequired");
+    invalidYearMessage =
+      test || !t ? "This field is required" : t("error_fieldRequired");
   }
 
   // validating month
   if (!isNaN(month)) {
     if (month < 0 || month > 11) {
-      invalidMonthMessage = t("error_invalidMonth");
+      invalidMonthMessage =
+        test || !t ? "Must be a valid month" : t("error_invalidMonth");
     }
   } else {
-    invalidMonthMessage = t("error_fieldRequired");
+    invalidMonthMessage =
+      test || !t ? "This field is required" : t("error_fieldRequired");
   }
 
   // validating day
   if (!isNaN(day)) {
     if (day > 31 || day < 1) {
-      invalidDayMessage = t("error_invalidDay");
+      invalidDayMessage =
+        test || !t ? "Must be a valid day" : t("error_invalidDay");
     }
   } else {
-    invalidDayMessage = t("error_fieldRequired");
+    invalidDayMessage =
+      test || !t ? "This field is required" : t("error_fieldRequired");
   }
 
   // validating date as a whole
@@ -60,13 +68,15 @@ const isValidDate = (props: IIsValidDate) => {
     ) {
       invalidYearMessage = " ";
       invalidMonthMessage = " ";
-      invalidDayMessage = t("error_invalidDate");
+      invalidDayMessage =
+        test || !t ? "Must be a valid date" : t("error_invalidDate");
     }
     // validating that validatedDate is in the past
     else if (currentDate.getTime() - validatedDate.getTime() < 0) {
       invalidYearMessage = " ";
       invalidMonthMessage = " ";
-      invalidDayMessage = t("error_notInPast");
+      invalidDayMessage =
+        test || !t ? "Must be in the past" : t("error_notInPast");
     }
   }
 
