@@ -5,6 +5,7 @@ import getDatesDifferences from "./util/getDatesDifference";
 import isValidDate from "./util/isValidDate";
 import { useTranslation } from "react-i18next";
 import getDateDescriptionFromNumber from "./util/getDateDescriptionFromNumber";
+import setTheme from "./util/setTheme";
 
 interface IResultAgeDifferenceObj {
   resultDay: number;
@@ -13,6 +14,11 @@ interface IResultAgeDifferenceObj {
 }
 
 function App() {
+  // reading url parameter theme and overriding system preference if it is present
+  const params = new URLSearchParams(window.location.search);
+  const theme = params.get("theme");
+  if (theme) setTheme(theme);
+  // i18next hook
   const { t } = useTranslation();
   // input data states
   const [ageDay, setAgeDay] = useState("");
